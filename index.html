@@ -68,108 +68,122 @@
   <!-- Audio Samples Specific Styles -->
   <style>
     .audio-section {
-      padding: 3rem 0;
+      padding: 1.25rem 0 !important;
+    }
+
+    .dae-section {
+      padding: 1.25rem 0 1.5rem !important;
     }
     
     .audio-section-title {
-      font-size: 2rem;
+      font-size: 1.5rem;
       font-weight: 700;
       color: #2c3e50;
-      margin-bottom: 1rem;
+      margin-bottom: 0.5rem;
       text-align: center;
     }
     
     .audio-section-subtitle {
-      font-size: 1.1rem;
+      font-size: 0.95rem;
       color: #666;
       text-align: center;
-      margin-bottom: 2rem;
+      margin-bottom: 1rem;
+      line-height: 1.45;
     }
     
     .sample-card {
       background: #fff;
-      border-radius: 12px;
-      padding: 2rem;
-      margin-bottom: 2rem;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
       border: 1px solid #e0e0e0;
     }
     
     .sample-header {
       display: flex;
       align-items: center;
-      margin-bottom: 1.5rem;
-      padding-bottom: 1rem;
-      border-bottom: 2px solid #f0f0f0;
+      margin-bottom: 0.75rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid #f0f0f0;
     }
     
     .sample-number {
       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       color: white;
-      width: 45px;
-      height: 45px;
+      width: 32px;
+      height: 32px;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       font-weight: 700;
-      font-size: 1.2rem;
-      margin-right: 1rem;
+      font-size: 0.95rem;
+      margin-right: 0.65rem;
+      flex-shrink: 0;
     }
     
     .sample-title {
-      font-size: 1.3rem;
+      font-size: 1.05rem;
       font-weight: 600;
       color: #2c3e50;
     }
     
     .target-text-box {
       background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);
-      border-left: 4px solid #667eea;
-      padding: 1rem 1.5rem;
-      border-radius: 0 8px 8px 0;
-      margin-bottom: 1.5rem;
+      border-left: 3px solid #667eea;
+      padding: 0.5rem 0.75rem;
+      border-radius: 0 6px 6px 0;
+      margin-bottom: 0;
+      height: 100%;
     }
     
     .target-text-label {
-      font-size: 0.85rem;
+      font-size: 0.72rem;
       color: #667eea;
       font-weight: 600;
       text-transform: uppercase;
-      letter-spacing: 0.5px;
-      margin-bottom: 0.5rem;
+      letter-spacing: 0.4px;
+      margin-bottom: 0.25rem;
     }
     
     .target-text-content {
-      font-size: 1.1rem;
+      font-size: 0.9rem;
       color: #2c3e50;
-      line-height: 1.6;
+      line-height: 1.4;
     }
     
+    .shared-audio-row {
+      margin-bottom: 0.75rem;
+    }
+
     .audio-row {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-      margin-top: 1rem;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.65rem;
+      margin-top: 0;
     }
     
     .audio-item {
       background: #f8f9fa;
-      border-radius: 8px;
-      padding: 1rem;
+      border-radius: 6px;
+      padding: 0.55rem 0.65rem;
+      min-width: 0;
     }
     
     .audio-label {
-      font-size: 0.9rem;
+      font-size: 0.8rem;
       font-weight: 600;
       color: #555;
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.4rem;
       display: flex;
       align-items: center;
+      flex-wrap: wrap;
+      gap: 0.25rem;
     }
     
     .audio-label i {
-      margin-right: 0.5rem;
+      margin-right: 0.35rem;
       color: #667eea;
     }
     
@@ -179,6 +193,7 @@
     
     .audio-player audio {
       width: 100%;
+      height: 32px;
       border-radius: 4px;
     }
     
@@ -186,148 +201,119 @@
       display: inline-block;
       background: #4caf50;
       color: white;
-      padding: 0.25rem 0.75rem;
-      border-radius: 4px;
-      font-size: 0.75rem;
+      padding: 0.1rem 0.45rem;
+      border-radius: 3px;
+      font-size: 0.65rem;
       font-weight: 600;
-      margin-left: 0.5rem;
+      margin-left: 0.25rem;
     }
     
-    .ground-truth-text-box {
-      background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
-      border-left: 4px solid #4caf50;
-      padding: 0.75rem 1.25rem;
-      border-radius: 0 8px 8px 0;
-      margin-top: 0.75rem;
-      margin-bottom: 1rem;
+    .speaker-block {
+      margin-bottom: 0.75rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid #eef0f3;
     }
     
-    .ground-truth-text-label {
-      font-size: 0.8rem;
-      color: #4caf50;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      margin-bottom: 0.25rem;
-    }
-    
-    .ground-truth-text-content {
-      font-size: 1rem;
-      color: #2c3e50;
-      line-height: 1.5;
-    }
-    
-    .subgroup {
-      margin-bottom: 1.5rem;
-      padding-bottom: 1.5rem;
-      border-bottom: 1px dashed #e0e0e0;
-    }
-    
-    .subgroup:last-child {
+    .speaker-block:last-child {
       border-bottom: none;
       margin-bottom: 0;
       padding-bottom: 0;
     }
     
-    .subgroup-header {
-      font-size: 1rem;
+    .speaker-header {
+      font-size: 0.88rem;
       font-weight: 600;
       color: #667eea;
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.45rem;
       display: flex;
       align-items: center;
     }
     
-    .subgroup-header i {
-      margin-right: 0.5rem;
+    .speaker-header i {
+      margin-right: 0.4rem;
     }
     
-    .subgroup-number {
+    .speaker-number {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 24px;
-      height: 24px;
+      width: 20px;
+      height: 20px;
       background: #667eea;
       color: white;
       border-radius: 50%;
-      font-size: 0.85rem;
+      font-size: 0.75rem;
       font-weight: 700;
-      margin-right: 0.5rem;
+      margin-right: 0.4rem;
+      flex-shrink: 0;
+    }
+
+    .speaker-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.65rem;
     }
     
     .section-divider {
-      height: 3px;
+      height: 2px;
       background: linear-gradient(90deg, transparent, #667eea, #764ba2, transparent);
-      margin: 4rem 0;
+      margin: 1.25rem 0;
     }
     
     .out-of-domain-note {
       background: #fff3e0;
       border: 1px solid #ff9800;
-      border-radius: 8px;
-      padding: 1rem;
-      margin-bottom: 2rem;
+      border-radius: 6px;
+      padding: 0.65rem 0.85rem;
+      margin-bottom: 1rem;
       text-align: center;
       color: #e65100;
+      font-size: 0.9rem;
     }
     
     .out-of-domain-note i {
-      margin-right: 0.5rem;
-    }
-    
-    .shared-input-note {
-      background: #e8f5e9;
-      border: 1px solid #4caf50;
-      border-radius: 8px;
-      padding: 1rem;
-      margin-bottom: 1.5rem;
-      text-align: center;
-      color: #2e7d32;
-    }
-    
-    .shared-input-note i {
-      margin-right: 0.5rem;
+      margin-right: 0.4rem;
     }
     
     /* Paper Figures Section Styles */
     .figures-section {
-      padding: 3rem 0;
+      padding: 1.25rem 0 1.5rem !important;
       background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ec 100%);
     }
     
     .figure-card {
       background: #fff;
-      border-radius: 12px;
-      padding: 2rem;
-      margin-bottom: 2rem;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
       border: 1px solid #e0e0e0;
     }
     
     .figure-header {
       display: flex;
       align-items: center;
-      margin-bottom: 1.5rem;
-      padding-bottom: 1rem;
-      border-bottom: 2px solid #f0f0f0;
+      margin-bottom: 0.75rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid #f0f0f0;
     }
     
     .figure-icon {
       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       color: white;
-      width: 50px;
-      height: 50px;
+      width: 34px;
+      height: 34px;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.5rem;
-      margin-right: 1rem;
+      font-size: 0.95rem;
+      margin-right: 0.65rem;
+      flex-shrink: 0;
     }
     
     .figure-title {
-      font-size: 1.4rem;
+      font-size: 1.05rem;
       font-weight: 600;
       color: #2c3e50;
     }
@@ -336,7 +322,7 @@
       text-align: center;
       padding: 0;
       background: transparent;
-      border-radius: 8px;
+      border-radius: 6px;
       border: none;
       display: flex;
       flex-direction: column;
@@ -344,107 +330,49 @@
       justify-content: center;
     }
     
-    .figure-placeholder {
-      color: #999;
-      font-size: 1.1rem;
-    }
-    
-    .figure-placeholder i {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-      display: block;
-      color: #ccc;
-    }
-    
     .figure-caption {
-      margin-top: 1.5rem;
-      padding: 1rem;
+      margin-top: 0.75rem;
+      padding: 0.65rem 0.85rem;
       background: #f8f9fa;
-      border-radius: 8px;
-      border-left: 4px solid #667eea;
+      border-radius: 6px;
+      border-left: 3px solid #667eea;
     }
     
     .figure-caption-label {
       font-weight: 600;
       color: #667eea;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.25rem;
+      font-size: 0.88rem;
     }
     
     .figure-caption-text {
       color: #666;
-      font-size: 0.95rem;
-      line-height: 1.6;
+      font-size: 0.88rem;
+      line-height: 1.45;
     }
     
     .paper-image {
       max-width: 100%;
       height: auto;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
     }
-    
-    /* New Styles for Enhanced Demo Structure */
-    .transcription-box {
-      background: linear-gradient(135deg, #f0f4f8 0%, #e2e8f0 100%);
-      border-left: 4px solid #3b82f6;
-      padding: 1rem 1.5rem;
-      border-radius: 0 8px 8px 0;
-      margin-bottom: 1.5rem;
+
+    .paper-image-70 {
+      max-width: 70%;
+      width: 70%;
+      height: auto;
     }
-    
-    .transcription-label {
-      font-size: 0.85rem;
-      color: #3b82f6;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      margin-bottom: 0.5rem;
-    }
-    
-    .transcription-content {
-      font-size: 1rem;
-      color: #2c3e50;
-      line-height: 1.6;
-      font-style: italic;
-    }
-    
-    .enrollment-section {
-      margin-bottom: 1.5rem;
-      padding: 1rem;
-      background: #f8fafc;
-      border-radius: 8px;
-      border: 1px solid #e2e8f0;
-    }
-    
-    .enrollment-header {
-      font-size: 1rem;
-      font-weight: 600;
-      color: #1e40af;
-      margin-bottom: 0.75rem;
-      display: flex;
-      align-items: center;
-    }
-    
-    .enrollment-header i {
-      margin-right: 0.5rem;
-    }
-    
-    .enrollment-speaker-label {
-      display: inline-block;
-      background: #3b82f6;
-      color: white;
-      padding: 0.25rem 0.75rem;
-      border-radius: 4px;
-      font-size: 0.8rem;
-      font-weight: 600;
-      margin-right: 0.5rem;
-    }
-    
-    .enrollment-audio-row {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1rem;
-      margin-top: 0.75rem;
+
+    @media screen and (max-width: 768px) {
+      .audio-row,
+      .speaker-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .audio-player audio {
+        height: 36px;
+      }
     }
   </style>
 </head>
@@ -463,34 +391,26 @@
           <div class="column has-text-centered">
             <h1 class="title is-1 publication-title">Detect, Attend and Extract: Keyword Guided Target Speaker Extraction</h1>
 
-            <div class="is-size-5 publication-authors">
-              <span class="author-block">
-                <a href="https://gnafiy.github.io/academic-research/" target="_blank">Haoyu Li</a><sup>1,2,*</sup>,
-              </span>
-              <span class="author-block">
-                Yu Xi<sup>2,*</sup>,
-              </span>
-              <span class="author-block">
-                Yidi Jiang<sup>3</sup>,
-              </span>
-              <span class="author-block">
-                Shuai Wang<sup>1,6,†</sup>,
-              </span>
-              <span class="author-block">
-                Kate Knill<sup>4</sup>,
-              </span>
-              <span class="author-block">
-                Mark Gales<sup>4</sup>,
-              </span>
-              <span class="author-block">
-                Haizhou Li<sup>5,6</sup>,
-              </span>
-              <span class="author-block">
-                Kai Yu<sup>2,†</sup>
-              </span>
+            <div class="publication-venue">
+              IJCAI-ECAI 2026 · Oral &amp; Poster
+            </div>
+            <div class="publication-session">
+              <div><strong>Oral Session:</strong> Aug 19 · 11:30-12:30 · Focke-Wulf</div>
+              <div><strong>Poster:</strong> Aug 19 · 16:30-18:00 · Hall 4</div>
             </div>
 
-            <div class="is-size-5 publication-authors">
+            <div class="publication-authors publication-author-names">
+              <span class="author-block"><a href="https://gnafiy.github.io/academic-research/" target="_blank">Haoyu Li</a><sup>1,2,*</sup>,</span>
+              <span class="author-block">Yu Xi<sup>2,*</sup>,</span>
+              <span class="author-block">Yidi Jiang<sup>3</sup>,</span>
+              <span class="author-block">Shuai Wang<sup>1,6,†</sup>,</span>
+              <span class="author-block">Kate Knill<sup>4</sup>,</span>
+              <span class="author-block">Mark Gales<sup>4</sup>,</span>
+              <span class="author-block">Haizhou Li<sup>5,6</sup>,</span>
+              <span class="author-block">Kai Yu<sup>2,†</sup></span>
+            </div>
+
+            <div class="publication-authors publication-affiliations">
               <span class="author-block"><sup>1</sup>School of Intelligence Science and Technology, Nanjing University, Suzhou, China</span><br>
               <span class="author-block"><sup>2</sup>X-LANCE Lab, MoE Key Lab of Artificial Intelligence, School of Computer Science, Shanghai Jiao Tong University, Shanghai, China</span><br>
               <span class="author-block"><sup>3</sup>National University of Singapore, Singapore</span><br>
@@ -499,9 +419,9 @@
               <span class="author-block"><sup>6</sup>Shenzhen Loop Area Institute, Shenzhen, China</span>
             </div>
 
-            <div class="is-size-6 publication-authors">
-              <span class="author-block"><sup>*</sup>Equal contribution</span>
-              <span class="author-block" style="margin-left: 1em;"><sup>†</sup>Corresponding authors</span>
+            <div class="publication-authors publication-notes">
+              <span class="author-block"><sup>*</sup>Equal contribution.</span>
+              <span class="author-block" style="margin-left: 1em;"><sup>†</sup>Corresponding authors.</span>
             </div>
 
             <div class="column has-text-centered">
@@ -560,7 +480,10 @@
         <div class="figure-title">Background</div>
       </div>
       <div class="figure-container">
-        <img src="static/images/background.jpg" alt="Research Background" class="paper-image" loading="lazy" />
+        <picture>
+          <source srcset="static/images/background.webp" type="image/webp">
+          <img src="static/images/background.jpg" alt="Research Background" class="paper-image paper-image-70" width="772" height="388" loading="lazy" decoding="async" />
+        </picture>
       </div>
       <div class="figure-caption">
         <div class="figure-caption-label">Figure 1: Research Background</div>
@@ -593,7 +516,7 @@
 <!-- Method Section -->
 <section class="section dae-section">
   <div class="container is-max-desktop">
-    <h2 class="audio-section-title" style="margin-bottom: 1rem;">Method</h2>
+    <h2 class="audio-section-title">Method</h2>
 
     <div class="figure-card">
       <div class="figure-header">
@@ -603,7 +526,10 @@
         <div class="figure-title">Overview of the proposed DAE-TSE framework</div>
       </div>
       <div class="figure-container">
-        <img src="static/images/overview.png" alt="DAE-TSE Overview" class="paper-image" loading="lazy" />
+        <picture>
+          <source srcset="static/images/overview.webp" type="image/webp">
+          <img src="static/images/overview.png" alt="DAE-TSE Overview" class="paper-image" width="1800" height="440" loading="lazy" decoding="async" />
+        </picture>
       </div>
       <div class="figure-caption">
         <div class="figure-caption-label">Figure 1: Overview of the proposed DAE-TSE framework</div>
@@ -632,7 +558,10 @@
         <div class="figure-title">Keyword Presence Detection and Temporal Localization</div>
       </div>
       <div class="figure-container">
-        <img src="static/images/attention_map_visualization.png" alt="Keyword Presence Detection and Temporal Localization" class="paper-image" loading="lazy" />
+        <picture>
+          <source srcset="static/images/attention_map_visualization.webp" type="image/webp">
+          <img src="static/images/attention_map_visualization.png" alt="Keyword Presence Detection and Temporal Localization" class="paper-image" width="1800" height="504" loading="lazy" decoding="async" />
+        </picture>
       </div>
       <div class="figure-caption">
         <div class="figure-caption-label">Figure 2: Keyword Presence Detection and Temporal Localization</div>
@@ -646,27 +575,23 @@
 
 <div class="section-divider"></div>
 
-<h2 class="audio-section-title" style="margin-bottom: 0.5rem;">Samples</h2>
-
 <!-- In-Domain Audio Samples Section -->
 <section class="section audio-section">
   <div class="container is-max-desktop">
     <h2 class="audio-section-title">In-Domain Samples</h2>
     <p class="audio-section-subtitle">
       5 test cases demonstrating keyword-guided target speaker extraction on LibriMix data.<br>
-      Each case contains a LibriMix mixture, complete transcriptions, ground-truth audio, enrollment utterances, and extracted outputs.
+      Each case contains a LibriMix mixture, complete transcriptions, ground-truth audio, enrollment keywords, and extracted outputs.
     </p>
 
-    <!-- Sample 1 -->
     <div class="sample-card">
       <div class="sample-header">
         <div class="sample-number">1</div>
         <div class="sample-title">Test Case 1</div>
       </div>
-      
-      <!-- Row 1: Mixture -->
+
       <div class="shared-audio-row">
-        <div class="audio-item" style="grid-column: span 2;">
+        <div class="audio-item">
           <div class="audio-label"><i class="fas fa-volume-up"></i> Mixed Speech (Input)</div>
           <div class="audio-player">
             <audio controls>
@@ -676,18 +601,17 @@
           </div>
         </div>
       </div>
-      
-      <!-- Row 2: Speaker 1 Full Transcription & Ground Truth -->
-      <div class="subgroup">
-        <div class="subgroup-header"><span class="subgroup-number">1</span> <i class="fas fa-user"></i> Speaker 1 - Full Transcription & Ground Truth</div>
-        <div class="audio-row">
-          <div class="audio-item" style="flex: 1;">
-            <div class="target-text-box" style="margin-bottom: 0;">
+
+      <div class="speaker-block">
+        <div class="speaker-header"><span class="speaker-number">1</span> <i class="fas fa-user"></i> Speaker 1</div>
+        <div class="speaker-grid">
+          <div class="audio-item">
+            <div class="target-text-box">
               <div class="target-text-label">Complete Transcription</div>
               <div class="target-text-content">"Ruth was glad to hear that Philip had made a push into"</div>
             </div>
           </div>
-          <div class="audio-item" style="flex: 1;">
+          <div class="audio-item">
             <div class="audio-label"><i class="fas fa-check-circle"></i> Ground-Truth Audio <span class="ground-truth-badge">Reference</span></div>
             <div class="audio-player">
               <audio controls>
@@ -696,20 +620,13 @@
               </audio>
             </div>
           </div>
-        </div>
-      </div>
-      
-      <!-- Row 3: Speaker 1 Enrollment & Extraction -->
-      <div class="subgroup">
-        <div class="subgroup-header"><span class="subgroup-number">2</span> <i class="fas fa-magic"></i> Speaker 1 - Enrollment & Extraction</div>
-        <div class="audio-row">
-          <div class="audio-item" style="flex: 1;">
-            <div class="target-text-box" style="margin-bottom: 0;">
+          <div class="audio-item">
+            <div class="target-text-box">
               <div class="target-text-label">Enrollment Keywords</div>
               <div class="target-text-content">"Philip"</div>
             </div>
           </div>
-          <div class="audio-item" style="flex: 1;">
+          <div class="audio-item">
             <div class="audio-label"><i class="fas fa-magic"></i> Extracted Output</div>
             <div class="audio-player">
               <audio controls>
@@ -720,18 +637,17 @@
           </div>
         </div>
       </div>
-      
-      <!-- Row 4: Speaker 2 Full Transcription & Ground Truth -->
-      <div class="subgroup">
-        <div class="subgroup-header"><span class="subgroup-number">3</span> <i class="fas fa-user"></i> Speaker 2 - Full Transcription & Ground Truth</div>
-        <div class="audio-row">
-          <div class="audio-item" style="flex: 1;">
-            <div class="target-text-box" style="margin-bottom: 0;">
+
+      <div class="speaker-block">
+        <div class="speaker-header"><span class="speaker-number">2</span> <i class="fas fa-user"></i> Speaker 2</div>
+        <div class="speaker-grid">
+          <div class="audio-item">
+            <div class="target-text-box">
               <div class="target-text-label">Complete Transcription</div>
               <div class="target-text-content">"the rest of you off a viking he had three ships"</div>
             </div>
           </div>
-          <div class="audio-item" style="flex: 1;">
+          <div class="audio-item">
             <div class="audio-label"><i class="fas fa-check-circle"></i> Ground-Truth Audio <span class="ground-truth-badge">Reference</span></div>
             <div class="audio-player">
               <audio controls>
@@ -740,20 +656,13 @@
               </audio>
             </div>
           </div>
-        </div>
-      </div>
-      
-      <!-- Row 5: Speaker 2 Enrollment & Extraction -->
-      <div class="subgroup">
-        <div class="subgroup-header"><span class="subgroup-number">4</span> <i class="fas fa-magic"></i> Speaker 2 - Enrollment & Extraction</div>
-        <div class="audio-row">
-          <div class="audio-item" style="flex: 1;">
-            <div class="target-text-box" style="margin-bottom: 0;">
+          <div class="audio-item">
+            <div class="target-text-box">
               <div class="target-text-label">Enrollment Keywords</div>
               <div class="target-text-content">"the rest of you"</div>
             </div>
           </div>
-          <div class="audio-item" style="flex: 1;">
+          <div class="audio-item">
             <div class="audio-label"><i class="fas fa-magic"></i> Extracted Output</div>
             <div class="audio-player">
               <audio controls>
@@ -766,16 +675,14 @@
       </div>
     </div>
 
-    <!-- Sample 2 -->
     <div class="sample-card">
       <div class="sample-header">
         <div class="sample-number">2</div>
         <div class="sample-title">Test Case 2</div>
       </div>
-      
-      <!-- Row 1: Mixture -->
+
       <div class="shared-audio-row">
-        <div class="audio-item" style="grid-column: span 2;">
+        <div class="audio-item">
           <div class="audio-label"><i class="fas fa-volume-up"></i> Mixed Speech (Input)</div>
           <div class="audio-player">
             <audio controls>
@@ -785,18 +692,17 @@
           </div>
         </div>
       </div>
-      
-      <!-- Row 2: Speaker 1 Full Transcription & Ground Truth -->
-      <div class="subgroup">
-        <div class="subgroup-header"><span class="subgroup-number">1</span> <i class="fas fa-user"></i> Speaker 1 - Full Transcription & Ground Truth</div>
-        <div class="audio-row">
-          <div class="audio-item" style="flex: 1;">
-            <div class="target-text-box" style="margin-bottom: 0;">
+
+      <div class="speaker-block">
+        <div class="speaker-header"><span class="speaker-number">1</span> <i class="fas fa-user"></i> Speaker 1</div>
+        <div class="speaker-grid">
+          <div class="audio-item">
+            <div class="target-text-box">
               <div class="target-text-label">Complete Transcription</div>
               <div class="target-text-content">"but the dusk deepening in the schoolroom covered over his thoughts the bell rang"</div>
             </div>
           </div>
-          <div class="audio-item" style="flex: 1;">
+          <div class="audio-item">
             <div class="audio-label"><i class="fas fa-check-circle"></i> Ground-Truth Audio <span class="ground-truth-badge">Reference</span></div>
             <div class="audio-player">
               <audio controls>
@@ -805,20 +711,13 @@
               </audio>
             </div>
           </div>
-        </div>
-      </div>
-      
-      <!-- Row 3: Speaker 1 Enrollment & Extraction -->
-      <div class="subgroup">
-        <div class="subgroup-header"><span class="subgroup-number">2</span> <i class="fas fa-magic"></i> Speaker 1 - Enrollment & Extraction</div>
-        <div class="audio-row">
-          <div class="audio-item" style="flex: 1;">
-            <div class="target-text-box" style="margin-bottom: 0;">
+          <div class="audio-item">
+            <div class="target-text-box">
               <div class="target-text-label">Enrollment Keywords</div>
               <div class="target-text-content">"the bell rang"</div>
             </div>
           </div>
-          <div class="audio-item" style="flex: 1;">
+          <div class="audio-item">
             <div class="audio-label"><i class="fas fa-magic"></i> Extracted Output</div>
             <div class="audio-player">
               <audio controls>
@@ -829,18 +728,17 @@
           </div>
         </div>
       </div>
-      
-      <!-- Row 4: Speaker 2 Full Transcription & Ground Truth -->
-      <div class="subgroup">
-        <div class="subgroup-header"><span class="subgroup-number">3</span> <i class="fas fa-user"></i> Speaker 2 - Full Transcription & Ground Truth</div>
-        <div class="audio-row">
-          <div class="audio-item" style="flex: 1;">
-            <div class="target-text-box" style="margin-bottom: 0;">
+
+      <div class="speaker-block">
+        <div class="speaker-header"><span class="speaker-number">2</span> <i class="fas fa-user"></i> Speaker 2</div>
+        <div class="speaker-grid">
+          <div class="audio-item">
+            <div class="target-text-box">
               <div class="target-text-label">Complete Transcription</div>
               <div class="target-text-content">"the modest fellow would have liked fame thrust upon him for some worthy achievement it might"</div>
             </div>
           </div>
-          <div class="audio-item" style="flex: 1;">
+          <div class="audio-item">
             <div class="audio-label"><i class="fas fa-check-circle"></i> Ground-Truth Audio <span class="ground-truth-badge">Reference</span></div>
             <div class="audio-player">
               <audio controls>
@@ -849,20 +747,13 @@
               </audio>
             </div>
           </div>
-        </div>
-      </div>
-      
-      <!-- Row 5: Speaker 2 Enrollment & Extraction -->
-      <div class="subgroup">
-        <div class="subgroup-header"><span class="subgroup-number">4</span> <i class="fas fa-magic"></i> Speaker 2 - Enrollment & Extraction</div>
-        <div class="audio-row">
-          <div class="audio-item" style="flex: 1;">
-            <div class="target-text-box" style="margin-bottom: 0;">
+          <div class="audio-item">
+            <div class="target-text-box">
               <div class="target-text-label">Enrollment Keywords</div>
               <div class="target-text-content">"fame thrust upon him"</div>
             </div>
           </div>
-          <div class="audio-item" style="flex: 1;">
+          <div class="audio-item">
             <div class="audio-label"><i class="fas fa-magic"></i> Extracted Output</div>
             <div class="audio-player">
               <audio controls>
@@ -875,16 +766,14 @@
       </div>
     </div>
 
-    <!-- Sample 3 -->
     <div class="sample-card">
       <div class="sample-header">
         <div class="sample-number">3</div>
         <div class="sample-title">Test Case 3</div>
       </div>
-      
-      <!-- Row 1: Mixture -->
+
       <div class="shared-audio-row">
-        <div class="audio-item" style="grid-column: span 2;">
+        <div class="audio-item">
           <div class="audio-label"><i class="fas fa-volume-up"></i> Mixed Speech (Input)</div>
           <div class="audio-player">
             <audio controls>
@@ -894,18 +783,17 @@
           </div>
         </div>
       </div>
-      
-      <!-- Row 2: Speaker 1 Full Transcription & Ground Truth -->
-      <div class="subgroup">
-        <div class="subgroup-header"><span class="subgroup-number">1</span> <i class="fas fa-user"></i> Speaker 1 - Full Transcription & Ground Truth</div>
-        <div class="audio-row">
-          <div class="audio-item" style="flex: 1;">
-            <div class="target-text-box" style="margin-bottom: 0;">
+
+      <div class="speaker-block">
+        <div class="speaker-header"><span class="speaker-number">1</span> <i class="fas fa-user"></i> Speaker 1</div>
+        <div class="speaker-grid">
+          <div class="audio-item">
+            <div class="target-text-box">
               <div class="target-text-label">Complete Transcription</div>
               <div class="target-text-content">"I like to talk to Karl about New York and what a fellow can do there"</div>
             </div>
           </div>
-          <div class="audio-item" style="flex: 1;">
+          <div class="audio-item">
             <div class="audio-label"><i class="fas fa-check-circle"></i> Ground-Truth Audio <span class="ground-truth-badge">Reference</span></div>
             <div class="audio-player">
               <audio controls>
@@ -914,20 +802,13 @@
               </audio>
             </div>
           </div>
-        </div>
-      </div>
-      
-      <!-- Row 3: Speaker 1 Enrollment & Extraction -->
-      <div class="subgroup">
-        <div class="subgroup-header"><span class="subgroup-number">2</span> <i class="fas fa-magic"></i> Speaker 1 - Enrollment & Extraction</div>
-        <div class="audio-row">
-          <div class="audio-item" style="flex: 1;">
-            <div class="target-text-box" style="margin-bottom: 0;">
+          <div class="audio-item">
+            <div class="target-text-box">
               <div class="target-text-label">Enrollment Keywords</div>
               <div class="target-text-content">"New York"</div>
             </div>
           </div>
-          <div class="audio-item" style="flex: 1;">
+          <div class="audio-item">
             <div class="audio-label"><i class="fas fa-magic"></i> Extracted Output</div>
             <div class="audio-player">
               <audio controls>
@@ -938,18 +819,17 @@
           </div>
         </div>
       </div>
-      
-      <!-- Row 4: Speaker 2 Full Transcription & Ground Truth -->
-      <div class="subgroup">
-        <div class="subgroup-header"><span class="subgroup-number">3</span> <i class="fas fa-user"></i> Speaker 2 - Full Transcription & Ground Truth</div>
-        <div class="audio-row">
-          <div class="audio-item" style="flex: 1;">
-            <div class="target-text-box" style="margin-bottom: 0;">
+
+      <div class="speaker-block">
+        <div class="speaker-header"><span class="speaker-number">2</span> <i class="fas fa-user"></i> Speaker 2</div>
+        <div class="speaker-grid">
+          <div class="audio-item">
+            <div class="target-text-box">
               <div class="target-text-label">Complete Transcription</div>
               <div class="target-text-content">"on Saturday mornings when the sodality met in the chapel to recite the"</div>
             </div>
           </div>
-          <div class="audio-item" style="flex: 1;">
+          <div class="audio-item">
             <div class="audio-label"><i class="fas fa-check-circle"></i> Ground-Truth Audio <span class="ground-truth-badge">Reference</span></div>
             <div class="audio-player">
               <audio controls>
@@ -958,20 +838,13 @@
               </audio>
             </div>
           </div>
-        </div>
-      </div>
-      
-      <!-- Row 5: Speaker 2 Enrollment & Extraction -->
-      <div class="subgroup">
-        <div class="subgroup-header"><span class="subgroup-number">4</span> <i class="fas fa-magic"></i> Speaker 2 - Enrollment & Extraction</div>
-        <div class="audio-row">
-          <div class="audio-item" style="flex: 1;">
-            <div class="target-text-box" style="margin-bottom: 0;">
+          <div class="audio-item">
+            <div class="target-text-box">
               <div class="target-text-label">Enrollment Keywords</div>
               <div class="target-text-content">"Saturday mornings"</div>
             </div>
           </div>
-          <div class="audio-item" style="flex: 1;">
+          <div class="audio-item">
             <div class="audio-label"><i class="fas fa-magic"></i> Extracted Output</div>
             <div class="audio-player">
               <audio controls>
@@ -984,16 +857,14 @@
       </div>
     </div>
 
-    <!-- Sample 4 -->
     <div class="sample-card">
       <div class="sample-header">
         <div class="sample-number">4</div>
         <div class="sample-title">Test Case 4</div>
       </div>
-      
-      <!-- Row 1: Mixture -->
+
       <div class="shared-audio-row">
-        <div class="audio-item" style="grid-column: span 2;">
+        <div class="audio-item">
           <div class="audio-label"><i class="fas fa-volume-up"></i> Mixed Speech (Input)</div>
           <div class="audio-player">
             <audio controls>
@@ -1003,18 +874,17 @@
           </div>
         </div>
       </div>
-      
-      <!-- Row 2: Speaker 1 Full Transcription & Ground Truth -->
-      <div class="subgroup">
-        <div class="subgroup-header"><span class="subgroup-number">1</span> <i class="fas fa-user"></i> Speaker 1 - Full Transcription & Ground Truth</div>
-        <div class="audio-row">
-          <div class="audio-item" style="flex: 1;">
-            <div class="target-text-box" style="margin-bottom: 0;">
+
+      <div class="speaker-block">
+        <div class="speaker-header"><span class="speaker-number">1</span> <i class="fas fa-user"></i> Speaker 1</div>
+        <div class="speaker-grid">
+          <div class="audio-item">
+            <div class="target-text-box">
               <div class="target-text-label">Complete Transcription</div>
               <div class="target-text-content">"he keeps the thou shalt not commandments first rate hen lord does"</div>
             </div>
           </div>
-          <div class="audio-item" style="flex: 1;">
+          <div class="audio-item">
             <div class="audio-label"><i class="fas fa-check-circle"></i> Ground-Truth Audio <span class="ground-truth-badge">Reference</span></div>
             <div class="audio-player">
               <audio controls>
@@ -1023,20 +893,13 @@
               </audio>
             </div>
           </div>
-        </div>
-      </div>
-      
-      <!-- Row 3: Speaker 1 Enrollment & Extraction -->
-      <div class="subgroup">
-        <div class="subgroup-header"><span class="subgroup-number">2</span> <i class="fas fa-magic"></i> Speaker 1 - Enrollment & Extraction</div>
-        <div class="audio-row">
-          <div class="audio-item" style="flex: 1;">
-            <div class="target-text-box" style="margin-bottom: 0;">
+          <div class="audio-item">
+            <div class="target-text-box">
               <div class="target-text-label">Enrollment Keywords</div>
               <div class="target-text-content">"thou shalt not"</div>
             </div>
           </div>
-          <div class="audio-item" style="flex: 1;">
+          <div class="audio-item">
             <div class="audio-label"><i class="fas fa-magic"></i> Extracted Output</div>
             <div class="audio-player">
               <audio controls>
@@ -1047,18 +910,17 @@
           </div>
         </div>
       </div>
-      
-      <!-- Row 4: Speaker 2 Full Transcription & Ground Truth -->
-      <div class="subgroup">
-        <div class="subgroup-header"><span class="subgroup-number">3</span> <i class="fas fa-user"></i> Speaker 2 - Full Transcription & Ground Truth</div>
-        <div class="audio-row">
-          <div class="audio-item" style="flex: 1;">
-            <div class="target-text-box" style="margin-bottom: 0;">
+
+      <div class="speaker-block">
+        <div class="speaker-header"><span class="speaker-number">2</span> <i class="fas fa-user"></i> Speaker 2</div>
+        <div class="speaker-grid">
+          <div class="audio-item">
+            <div class="target-text-box">
               <div class="target-text-label">Complete Transcription</div>
               <div class="target-text-content">"the attendance was unexpectedly large and the girls were delighted"</div>
             </div>
           </div>
-          <div class="audio-item" style="flex: 1;">
+          <div class="audio-item">
             <div class="audio-label"><i class="fas fa-check-circle"></i> Ground-Truth Audio <span class="ground-truth-badge">Reference</span></div>
             <div class="audio-player">
               <audio controls>
@@ -1067,20 +929,13 @@
               </audio>
             </div>
           </div>
-        </div>
-      </div>
-      
-      <!-- Row 5: Speaker 2 Enrollment & Extraction -->
-      <div class="subgroup">
-        <div class="subgroup-header"><span class="subgroup-number">4</span> <i class="fas fa-magic"></i> Speaker 2 - Enrollment & Extraction</div>
-        <div class="audio-row">
-          <div class="audio-item" style="flex: 1;">
-            <div class="target-text-box" style="margin-bottom: 0;">
+          <div class="audio-item">
+            <div class="target-text-box">
               <div class="target-text-label">Enrollment Keywords</div>
               <div class="target-text-content">"the girls"</div>
             </div>
           </div>
-          <div class="audio-item" style="flex: 1;">
+          <div class="audio-item">
             <div class="audio-label"><i class="fas fa-magic"></i> Extracted Output</div>
             <div class="audio-player">
               <audio controls>
@@ -1093,16 +948,14 @@
       </div>
     </div>
 
-    <!-- Sample 5 -->
     <div class="sample-card">
       <div class="sample-header">
         <div class="sample-number">5</div>
         <div class="sample-title">Test Case 5</div>
       </div>
-      
-      <!-- Row 1: Mixture -->
+
       <div class="shared-audio-row">
-        <div class="audio-item" style="grid-column: span 2;">
+        <div class="audio-item">
           <div class="audio-label"><i class="fas fa-volume-up"></i> Mixed Speech (Input)</div>
           <div class="audio-player">
             <audio controls>
@@ -1112,18 +965,17 @@
           </div>
         </div>
       </div>
-      
-      <!-- Row 2: Speaker 1 Full Transcription & Ground Truth -->
-      <div class="subgroup">
-        <div class="subgroup-header"><span class="subgroup-number">1</span> <i class="fas fa-user"></i> Speaker 1 - Full Transcription & Ground Truth</div>
-        <div class="audio-row">
-          <div class="audio-item" style="flex: 1;">
-            <div class="target-text-box" style="margin-bottom: 0;">
+
+      <div class="speaker-block">
+        <div class="speaker-header"><span class="speaker-number">1</span> <i class="fas fa-user"></i> Speaker 1</div>
+        <div class="speaker-grid">
+          <div class="audio-item">
+            <div class="target-text-box">
               <div class="target-text-label">Complete Transcription</div>
               <div class="target-text-content">"I dunno and can't say how you fine gentlemen define wickedness or"</div>
             </div>
           </div>
-          <div class="audio-item" style="flex: 1;">
+          <div class="audio-item">
             <div class="audio-label"><i class="fas fa-check-circle"></i> Ground-Truth Audio <span class="ground-truth-badge">Reference</span></div>
             <div class="audio-player">
               <audio controls>
@@ -1132,20 +984,13 @@
               </audio>
             </div>
           </div>
-        </div>
-      </div>
-      
-      <!-- Row 3: Speaker 1 Enrollment & Extraction -->
-      <div class="subgroup">
-        <div class="subgroup-header"><span class="subgroup-number">2</span> <i class="fas fa-magic"></i> Speaker 1 - Enrollment & Extraction</div>
-        <div class="audio-row">
-          <div class="audio-item" style="flex: 1;">
-            <div class="target-text-box" style="margin-bottom: 0;">
+          <div class="audio-item">
+            <div class="target-text-box">
               <div class="target-text-label">Enrollment Keywords</div>
               <div class="target-text-content">"you fine gentlemen"</div>
             </div>
           </div>
-          <div class="audio-item" style="flex: 1;">
+          <div class="audio-item">
             <div class="audio-label"><i class="fas fa-magic"></i> Extracted Output</div>
             <div class="audio-player">
               <audio controls>
@@ -1156,18 +1001,17 @@
           </div>
         </div>
       </div>
-      
-      <!-- Row 4: Speaker 2 Full Transcription & Ground Truth -->
-      <div class="subgroup">
-        <div class="subgroup-header"><span class="subgroup-number">3</span> <i class="fas fa-user"></i> Speaker 2 - Full Transcription & Ground Truth</div>
-        <div class="audio-row">
-          <div class="audio-item" style="flex: 1;">
-            <div class="target-text-box" style="margin-bottom: 0;">
+
+      <div class="speaker-block">
+        <div class="speaker-header"><span class="speaker-number">2</span> <i class="fas fa-user"></i> Speaker 2</div>
+        <div class="speaker-grid">
+          <div class="audio-item">
+            <div class="target-text-box">
               <div class="target-text-label">Complete Transcription</div>
               <div class="target-text-content">"Sit down, please," said Gates in a cheerful and pleasant voice; "there's a bench here."</div>
             </div>
           </div>
-          <div class="audio-item" style="flex: 1;">
+          <div class="audio-item">
             <div class="audio-label"><i class="fas fa-check-circle"></i> Ground-Truth Audio <span class="ground-truth-badge">Reference</span></div>
             <div class="audio-player">
               <audio controls>
@@ -1176,20 +1020,13 @@
               </audio>
             </div>
           </div>
-        </div>
-      </div>
-      
-      <!-- Row 5: Speaker 2 Enrollment & Extraction -->
-      <div class="subgroup">
-        <div class="subgroup-header"><span class="subgroup-number">4</span> <i class="fas fa-magic"></i> Speaker 2 - Enrollment & Extraction</div>
-        <div class="audio-row">
-          <div class="audio-item" style="flex: 1;">
-            <div class="target-text-box" style="margin-bottom: 0;">
+          <div class="audio-item">
+            <div class="target-text-box">
               <div class="target-text-label">Enrollment Keywords</div>
               <div class="target-text-content">"said Gates"</div>
             </div>
           </div>
-          <div class="audio-item" style="flex: 1;">
+          <div class="audio-item">
             <div class="audio-label"><i class="fas fa-magic"></i> Extracted Output</div>
             <div class="audio-player">
               <audio controls>
@@ -1210,26 +1047,24 @@
   <div class="container is-max-desktop">
     <h2 class="audio-section-title">Out-of-Domain Samples</h2>
     <p class="audio-section-subtitle">
-      1 test cases demonstrating keyword-guided target speaker extraction on out-of-domain data.<br>
+      1 test case demonstrating keyword-guided target speaker extraction on out-of-domain data.<br>
       Each case contains a mixture, enrollment keywords, and extracted output. Ground-truth and speech enrollment are not available.
     </p>
 
     <div class="out-of-domain-note">
       <i class="fas fa-info-circle"></i>
-      <strong>Note:</strong> These samples demonstrate the model's generalization capability on unseen data. 
+      <strong>Note:</strong> These samples demonstrate the model's generalization capability on unseen data.
       Ground-truth audio and text are not available for out-of-domain samples.
     </div>
 
-    <!-- Test Case 1 -->
     <div class="sample-card">
       <div class="sample-header">
         <div class="sample-number">1</div>
         <div class="sample-title">Test Case 1</div>
       </div>
-      
-      <!-- Row 1: Mixture -->
+
       <div class="shared-audio-row">
-        <div class="audio-item" style="grid-column: span 2;">
+        <div class="audio-item">
           <div class="audio-label"><i class="fas fa-volume-up"></i> Mixed Speech (Input)</div>
           <div class="audio-player">
             <audio controls>
@@ -1239,18 +1074,17 @@
           </div>
         </div>
       </div>
-      
-      <!-- Row 2: Enrollment & Extraction -->
-      <div class="subgroup">
-        <div class="subgroup-header"><span class="subgroup-number">1</span> <i class="fas fa-key"></i> Enrollment & Extraction</div>
+
+      <div class="speaker-block">
+        <div class="speaker-header"><span class="speaker-number">1</span> <i class="fas fa-key"></i> Enrollment &amp; Extraction</div>
         <div class="audio-row">
-          <div class="audio-item" style="flex: 1;">
-            <div class="target-text-box" style="margin-bottom: 0;">
+          <div class="audio-item">
+            <div class="target-text-box">
               <div class="target-text-label">Enrollment Keywords</div>
               <div class="target-text-content">"why you bully me"</div>
             </div>
           </div>
-          <div class="audio-item" style="flex: 1;">
+          <div class="audio-item">
             <div class="audio-label"><i class="fas fa-magic"></i> Extracted Output</div>
             <div class="audio-player">
               <audio controls>
@@ -1262,99 +1096,9 @@
         </div>
       </div>
     </div>
-
-<!-- 
-    Test Case 2
-    <div class="sample-card">
-      <div class="sample-header">
-        <div class="sample-number">2</div>
-        <div class="sample-title">Test Case 2</div>
-      </div>
-      
-      Row 1: Mixture
-      <div class="shared-audio-row">
-        <div class="audio-item" style="grid-column: span 2;">
-          <div class="audio-label"><i class="fas fa-volume-up"></i> Mixed Speech (Input)</div>
-          <div class="audio-player">
-            <audio controls>
-              <source src="static/audio/out_of_domain/case2/mixture.wav" type="audio/wav">
-              Your browser does not support the audio element.
-            </audio>
-          </div>
-        </div>
-      </div>
-      
-      Row 2: Enrollment & Extraction
-      <div class="subgroup">
-        <div class="subgroup-header"><span class="subgroup-number">1</span> <i class="fas fa-key"></i> Enrollment & Extraction</div>
-        <div class="audio-row">
-          <div class="audio-item" style="flex: 1;">
-            <div class="target-text-box" style="margin-bottom: 0;">
-              <div class="target-text-label">Enrollment Keywords</div>
-              <div class="target-text-content">"请填入关键词"</div>
-            </div>
-          </div>
-          <div class="audio-item" style="flex: 1;">
-            <div class="audio-label"><i class="fas fa-magic"></i> Extracted Output</div>
-            <div class="audio-player">
-              <audio controls>
-                <source src="static/audio/out_of_domain/case2/output.wav" type="audio/wav">
-                Your browser does not support the audio element.
-              </audio>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    Test Case 3
-    <div class="sample-card">
-      <div class="sample-header">
-        <div class="sample-number">3</div>
-        <div class="sample-title">Test Case 3</div>
-      </div>
-      
-      Row 1: Mixture
-      <div class="shared-audio-row">
-        <div class="audio-item" style="grid-column: span 2;">
-          <div class="audio-label"><i class="fas fa-volume-up"></i> Mixed Speech (Input)</div>
-          <div class="audio-player">
-            <audio controls>
-              <source src="static/audio/out_of_domain/case3/mixture.wav" type="audio/wav">
-              Your browser does not support the audio element.
-            </audio>
-          </div>
-        </div>
-      </div>
-      
-      Row 2: Enrollment & Extraction
-      <div class="subgroup">
-        <div class="subgroup-header"><span class="subgroup-number">1</span> <i class="fas fa-key"></i> Enrollment & Extraction</div>
-        <div class="audio-row">
-          <div class="audio-item" style="flex: 1;">
-            <div class="target-text-box" style="margin-bottom: 0;">
-              <div class="target-text-label">Enrollment Keywords</div>
-              <div class="target-text-content">"请填入关键词"</div>
-            </div>
-          </div>
-          <div class="audio-item" style="flex: 1;">
-            <div class="audio-label"><i class="fas fa-magic"></i> Extracted Output</div>
-            <div class="audio-player">
-              <audio controls>
-                <source src="static/audio/out_of_domain/case3/output.wav" type="audio/wav">
-                Your browser does not support the audio element.
-              </audio>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
--->
   </div>
 </section>
 <!-- End Out-of-Domain Audio Samples Section -->
-<!-- End Out-of-Domain Audio Samples Section -->
-
 
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
@@ -1366,10 +1110,10 @@
       </button>
     </div>
     <pre id="bibtex-code"><code>@article{li2026detect,
-  title={Detect, Attend and Extract: Keyword Guided Target Speaker Extraction},
-  author={Li, Haoyu and Xi, Yu and Jiang, Yidi and Wang, Shuai and Knill, Kate and Gales, Mark and Li, Haizhou and Yu, Kai},
-  journal={arXiv preprint arXiv:2602.07977},
-  year={2026}
+    title={Detect, Attend and Extract: Keyword Guided Target Speaker Extraction},
+    author={Li, Haoyu and Xi, Yu and Jiang, Yidi and Wang, Shuai and Knill, Kate and Gales, Mark and Li, Haizhou and Yu, Kai},
+    journal={arXiv preprint arXiv:2602.07977},
+    year={2026}
 }</code></pre>
   </div>
 </section>

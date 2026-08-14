@@ -31,11 +31,36 @@ html {
 body {
   font-family: 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
   color: var(--text-primary);
-  line-height: 1.6;
-  font-size: 16px;
+  line-height: 1.55;
+  font-size: 15px;
   background-color: var(--background-primary);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.section {
+  padding: 1.5rem 1.5rem !important;
+}
+
+.title.is-1.publication-title {
+  font-size: 2.25rem !important;
+}
+
+.title.is-3 {
+  font-size: 1.5rem !important;
+  margin-bottom: 0.75rem !important;
+}
+
+.content.has-text-justified p,
+.content p {
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.button.is-normal {
+  font-size: 0.875rem !important;
+  height: auto !important;
+  padding: 0.4rem 0.9rem !important;
 }
 
 
@@ -79,7 +104,7 @@ body {
 }
 
 .link-block a {
-    margin: 8px 4px;
+    margin: 4px 3px;
 }
 
 .dnerf {
@@ -100,7 +125,7 @@ body {
 }
 
 .hero-body {
-  padding: 4rem 1.5rem;
+  padding: 2.25rem 1.5rem 1.5rem;
 }
 
 .teaser .hero-body {
@@ -118,8 +143,8 @@ body {
     font-family: 'Inter', sans-serif !important;
     font-weight: 800 !important;
     color: var(--text-primary) !important;
-    margin-bottom: 2rem !important;
-    line-height: 1.1 !important;
+    margin-bottom: 0.75rem !important;
+    line-height: 1.15 !important;
 }
 
 .publication-banner {
@@ -148,18 +173,56 @@ body {
 .publication-authors {
     font-family: 'Inter', sans-serif !important;
     font-weight: 500;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.55rem;
+    line-height: 1.45;
+}
+
+.publication-author-names {
+    font-size: 1.15rem;
+    white-space: nowrap;
+}
+
+.publication-author-names .author-block {
+    display: inline;
+    margin-right: 0.25rem;
+}
+
+.publication-affiliations {
+    font-size: 0.95rem !important;
+    line-height: 1.55;
+    margin-bottom: 0.45rem;
+    color: var(--text-secondary);
+}
+
+.publication-notes {
+    margin-bottom: 0.9rem !important;
+    font-size: 0.9rem !important;
 }
 
 .publication-venue {
-    color: var(--text-secondary);
+    color: var(--primary-color);
     width: fit-content;
-    font-weight: 600;
-    background: var(--background-accent);
-    padding: 0.5rem 1rem;
+    font-weight: 700;
+    background: #eff6ff;
+    padding: 0.35rem 0.85rem;
     border-radius: var(--border-radius);
-    margin-top: 1rem;
+    margin: 0.25rem auto 0.35rem;
     display: inline-block;
+    border: 1px solid #bfdbfe;
+    font-size: 0.95rem;
+}
+
+.publication-session {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.45;
+    margin: 0 auto 0.75rem;
+    max-width: 36rem;
+}
+
+.publication-session strong {
+    color: var(--text-primary);
+    font-weight: 600;
 }
 
 .publication-awards {
@@ -202,7 +265,11 @@ body {
 
 .author-block {
   display: inline-block;
-  margin-right: 0.5rem;
+  margin-right: 0.35rem;
+}
+
+.publication-links {
+  margin-top: 0.25rem;
 }
 
 .publication-banner img {
@@ -312,10 +379,11 @@ body {
 .title.is-3 {
   font-family: 'Inter', sans-serif !important;
   font-weight: 700 !important;
+  font-size: 1.5rem !important;
   color: var(--text-primary);
-  margin-bottom: 2rem !important;
+  margin-bottom: 0.75rem !important;
   position: relative;
-  padding-bottom: 1rem;
+  padding-bottom: 0.5rem;
 }
 
 .title.is-3::after {
@@ -324,16 +392,16 @@ body {
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 60px;
-  height: 3px;
+  width: 48px;
+  height: 2px;
   background: var(--gradient-accent);
   border-radius: 2px;
 }
 
 /* Content Improvements */
 .content.has-text-justified {
-  font-size: 1.1rem;
-  line-height: 1.8;
+  font-size: 0.95rem;
+  line-height: 1.55;
   color: var(--text-secondary);
 }
 
@@ -345,12 +413,13 @@ body {
 .footer {
   background: var(--background-secondary);
   border-top: 1px solid var(--border-color);
-  padding: 3rem 1.5rem;
+  padding: 1.5rem 1.5rem;
 }
 
 .footer .content {
   color: var(--text-secondary);
-  line-height: 1.7;
+  line-height: 1.55;
+  font-size: 0.9rem;
 }
 
 .footer a {
@@ -368,8 +437,12 @@ body {
 pre {
   background: var(--background-accent) !important;
   border: 1px solid var(--border-color) !important;
-  border-radius: var(--border-radius) !important;
-  padding: 1.5rem !important;
+  border-radius: 8px !important;
+  padding: 1rem !important;
+  font-size: 0.85rem !important;
+  line-height: 1.45 !important;
+  overflow-x: auto;
+}
   font-size: 0.9rem !important;
   overflow-x: auto;
   box-shadow: var(--shadow-sm);
@@ -386,22 +459,27 @@ code {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1rem;
+  margin-bottom: 0.65rem;
+}
+
+.bibtex-header .title {
+  font-size: 1.5rem !important;
+  margin-bottom: 0 !important;
 }
 
 .copy-bibtex-btn {
   background: var(--primary-color);
   color: white;
   border: none;
-  border-radius: var(--border-radius);
-  padding: 0.75rem 1rem;
-  font-size: 0.9rem;
+  border-radius: 8px;
+  padding: 0.45rem 0.75rem;
+  font-size: 0.85rem;
   font-weight: 600;
   cursor: pointer;
   transition: var(--transition);
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.4rem;
 }
 
 .copy-bibtex-btn:hover {
@@ -616,6 +694,11 @@ code {
   
   .publication-authors {
     font-size: 1rem !important;
+  }
+
+  .publication-author-names {
+    white-space: normal;
+    font-size: 1rem;
   }
   
   .button {
